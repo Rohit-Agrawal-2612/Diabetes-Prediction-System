@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+</head>
+<style type="text/css">
+    body{
+        background-image: url("static/diabetesmagazijn-nl-z03Q6GAkqKM-unsplash.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    h1{
+        text-align: center;
+        background-color: rgba(255, 238, 0, 0.35);
+        width: 600px;
+        margin: auto;
+    }
+    .main{
+        text-align: center;
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: rgba(150, 161, 46, 0.6);
+
+    }
+    table td{
+        padding: 0.7rem 1.5rem;
+    }
+</style>
+<body>
+    <h1>welcome to Diabetes Prediction system</h1>
+    <div class="main" style="margin-top: 100px;">
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td align="right"><label>Pregnancies</label></td>
+                <td align="left"><input type="text" name="Pregnancies" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>Glucose</label></td>
+                <td align="left"><input type="text" name="Glucose" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>Blood Pressure</label></td>
+                <td align="left"><input type="text" name="BP" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>Skin Thickness</label></td>
+                <td align="left"><input type="text" name="ST" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>Insulin</label></td>
+                <td align="left"><input type="text" name="Insulin" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>BMI</label></td>
+                <td align="left"><input type="text" name="BMI" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>Diabetes Pedigree Function</label></td>
+                <td align="left"><input type="text" name="DPF" required></td>
+            </tr>
+            <tr>
+                <td align="right"><label>Age</label></td>
+                <td align="left"><input type="text" name="Age" required></td>
+            </tr>
+        </table>
+        <button type="submit" style="border-radius: 4px;">Submit</button>
+        <p>Result : <span style="color: red;">{{result}}</span></p>
+    </form>
+    </div>
+</body>
+</html>
